@@ -181,3 +181,4 @@ print(time_diff_stats)
 merged_df.to_csv('merged_cme_gst_data.csv', index=False)
 
 print("Data exported to 'merged_cme_gst_data.csv'")
+
