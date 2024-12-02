@@ -56,30 +56,30 @@ python gst_data_processing.py
 python merge_export_data.py
 
 
-###Retrieving Data
+### Retrieving Data
 The code constructs query URLs for CME and GST data based on the base URL, date ranges, and API key.
 The JSON responses are previewed and converted into Pandas DataFrames.
 
-###Cleaning Data
+### Cleaning Data
 Exploding Nested Data: The linkedEvents column, containing nested lists of dictionaries, is expanded into individual rows.
 Extracting IDs: A helper function extract_activityID_from_dict is used to extract activityID values safely.
 Filtering and Removing Missing Data: Rows with missing or irrelevant data are removed to retain only meaningful observations.
 
-###Transforming Data
+### Transforming Data
 Columns are converted to appropriate data types, including datetime.
 New columns are created, such as CME_ActivityID and timeDiff.
 Columns are renamed for clarity (startTime to startTime_CME, etc.).
 
-###Merging Data
+### Merging Data
 The CME and GST DataFrames are merged using keys like GST_ActivityID and CME_ActivityID.
 Time differences between events are calculated.
 
-###Exporting Data
+### Exporting Data
 The final merged dataset is exported to a CSV file for further analysis.
 Key Functions and Features
 extract_activityID_from_dict: A utility function to safely extract activityID from dictionaries, handling errors gracefully.
 
-###Dynamic Filtering: Rows are filtered based on the presence of specific keywords (e.g., 'CME').
+### Dynamic Filtering: Rows are filtered based on the presence of specific keywords (e.g., 'CME').
 
 Time Difference Calculation: Calculates the time difference (in seconds) between CME and GST start times.
 
